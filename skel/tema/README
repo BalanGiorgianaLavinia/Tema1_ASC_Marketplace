@@ -1,0 +1,37 @@
+Balan Giorgiana-Lavinia
+        331CB
+
+
+                    =Tema 1 ASC=
+
+
+
+    Pentru implementarea temei am folosit ca si structuri de date dictionar 
+si liste. Am folosit un dictionar producers_queues care contine cate o intrare 
+pentru fieare producator si lista lui de produse. 
+    De asemenea, am utilizat o lista de liste de tupluri. Aceasta lista contine 
+pentru fiecare cart cate o lista de tupluri care reprezinta de fapt perechi de 
+produs si id-ul producatorului din lista caruia a fost luat respectivul produs. 
+Am retinut aceasta informatie (id-ul producatorului de unde a fost luat produsul) 
+pentru a putea la o operatie de remove_from_cart sa readaug produsul in lista 
+de produse a aceluiasi producator.
+    Alte informatii relevante sunt date in comentariile din cod, consider ca 
+restul este destul de evident. 
+
+    Nu am folosit pentru sincronizare niciun fel de lock intrucat am observat 
+dupa foarte multe rulari ale checkerului (aprox 80-90) ca nu exista "conflicte" 
+intre thread-uri. Explicatia pentru acest lucru pe care am gasit-o dupa ceva 
+research pe net este ca structurile folosite si operatiile pe ele in python 
+sunt thread safe, cu alte cuvinte operatiile sunt atomice, asigurandu-se ca 
+la un moment de timp un singur thread poate realiza modificari pe lista, de 
+exemplu.
+
+    Mentionez ca la toate cele 80-90 de rulari ale checker-ului, toate testele 
+au trecut intr-un timp de 1m29->1m31 (detaliu mai mult sau mai putin relevant).
+
+    Am rulat pylint pe fiecare sursa si am facut modificarile necesare de 
+coding style astfel incat primesc 10/10.
+
+    Mi s-a parut interesanta tema si utila pentru ca am invatat ceva nou si anume 
+cum functioneaza sincronizarea in Python. Am realizat aceasta tema destul de rapid, 
+aproximativ 4 ore dupa ce am inteles exact care sunt cerintele.
